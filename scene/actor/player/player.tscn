@@ -16,7 +16,7 @@ closed = true
 cull_mode = 0
 polygon = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
-[node name="player" type="KinematicBody2D" index="0"]
+[node name="player" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -42,7 +42,7 @@ offset = Vector2( 0, 0 )
 texture_scale = 1.0
 color = Color( 1, 1, 1, 1 )
 energy = 1.0
-mode = 0
+mode = 2
 range_height = 0.0
 range_z_min = -1024
 range_z_max = 1024
