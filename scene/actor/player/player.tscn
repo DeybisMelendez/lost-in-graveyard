@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scene/actor/player/player.gd" type="Script" id=1]
 [ext_resource path="res://scene/actor/player/anim/anim.tres" type="SpriteFrames" id=2]
@@ -10,13 +10,7 @@ custom_solver_bias = 0.0
 radius = 5.0
 height = 10.0
 
-[sub_resource type="OccluderPolygon2D" id=2]
-
-closed = true
-cull_mode = 0
-polygon = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
-
-[node name="player" type="KinematicBody2D"]
+[node name="player" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -49,20 +43,13 @@ range_z_max = 1024
 range_layer_min = 0
 range_layer_max = 0
 range_item_cull_mask = 1
-shadow_enabled = false
+shadow_enabled = true
 shadow_color = Color( 0, 0, 0, 0 )
 shadow_buffer_size = 2048
 shadow_gradient_length = 0.0
-shadow_filter = 0
+shadow_filter = 1
 shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
-_sections_unfolded = [ "Transform" ]
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="." index="3"]
-
-position = Vector2( -8, -16 )
-occluder = SubResource( 2 )
-light_mask = 1
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Shadow", "Transform" ]
 
 
