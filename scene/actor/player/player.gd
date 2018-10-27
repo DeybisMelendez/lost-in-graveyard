@@ -14,6 +14,9 @@ var dir = {
 	left = Vector2(-1, 0),
 }
 var mov = Vector2()
+var light_scale = 0.8
+var light_anim = "add"
+var light_vel = 0.05
 
 func _physics_process(delta):
 	if Input.is_action_pressed("up"):
@@ -42,3 +45,14 @@ func _physics_process(delta):
 	mov.x = clamp(mov.x, -max_speed, max_speed)
 	mov.y = clamp(mov.y, -max_speed, max_speed)
 	mov = move_and_slide(mov)
+	
+	$Light2D.rotation_degrees += 5 * delta
+	#$Light2D2.rotation_degrees -= 5 * delta
+	if $Light2D.get_texture_scale() >= light_scale:
+		light_anim = "sub"
+	elif $Light2D.get_texture_scale() <= light_scale - 0.05:
+		light_anim = "add"
+	if light_anim == "add":
+		$Light2D.set_texture_scale($Light2D.get_texture_scale() + light_vel * delta)
+	else:
+		$Light2D.set_texture_scale($Light2D.get_texture_scale() - light_vel * delta)

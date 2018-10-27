@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+path="res://.import/smoke_01.png-1bcb72b1418427f2c7723858863df6ec.stex"
 
 [deps]
 
-source_file="res://icon.png"
-dest_files=[ "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex" ]
+source_file="res://scene/actor/player/smoke_01.png"
+dest_files=[ "res://.import/smoke_01.png-1bcb72b1418427f2c7723858863df6ec.stex" ]
 
 [params]
 
@@ -15,7 +15,7 @@ compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
-flags/repeat=0
+flags/repeat=2
 flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false

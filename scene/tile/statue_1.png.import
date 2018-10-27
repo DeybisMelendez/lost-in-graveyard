@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tomb_1.png-4c8a4f357b71026d35a286aa3fbe3dbe.stex"
+path="res://.import/statue_1.png-aaa310cd16a3aa2a1ed4255d6b70a78c.stex"
 
 [deps]
 
-source_file="res://scene/tile/tomb_1.png"
-dest_files=[ "res://.import/tomb_1.png-4c8a4f357b71026d35a286aa3fbe3dbe.stex" ]
+source_file="res://scene/tile/statue_1.png"
+dest_files=[ "res://.import/statue_1.png-aaa310cd16a3aa2a1ed4255d6b70a78c.stex" ]
 
 [params]
 
@@ -16,7 +16,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
