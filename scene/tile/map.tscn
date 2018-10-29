@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://scene/tile/grass.png" type="Texture" id=1]
 [ext_resource path="res://scene/tile/grass_1.png" type="Texture" id=2]
@@ -25,6 +25,14 @@
 [ext_resource path="res://scene/tile/Tumba1.png" type="Texture" id=23]
 [ext_resource path="res://scene/tile/Tumba2.png" type="Texture" id=24]
 [ext_resource path="res://scene/tile/Tumba3.png" type="Texture" id=25]
+[ext_resource path="res://scene/tile/wall1.png" type="Texture" id=26]
+[ext_resource path="res://scene/tile/wall1_v.png" type="Texture" id=27]
+[ext_resource path="res://scene/tile/wall2_v.png" type="Texture" id=28]
+[ext_resource path="res://scene/tile/wall3_v.png" type="Texture" id=29]
+[ext_resource path="res://scene/tile/wall4_v.png" type="Texture" id=30]
+[ext_resource path="res://scene/tile/wall_v3.png" type="Texture" id=31]
+[ext_resource path="res://scene/tile/wall_v1.png" type="Texture" id=32]
+[ext_resource path="res://scene/tile/wall_v2.png" type="Texture" id=33]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -56,7 +64,18 @@ radius = 16.0
 custom_solver_bias = 0.0
 extents = Vector2( 12, 8 )
 
-[node name="map" type="Node" index="0"]
+[sub_resource type="RectangleShape2D" id=7]
+
+custom_solver_bias = 0.0
+extents = Vector2( 16, 16 )
+
+[sub_resource type="OccluderPolygon2D" id=8]
+
+closed = true
+cull_mode = 0
+polygon = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[node name="map" type="Node"]
 
 [node name="grass" type="Sprite" parent="." index="0"]
 
@@ -303,6 +322,7 @@ shape = SubResource( 5 )
 
 [node name="tomb_1" type="Sprite" parent="." index="16"]
 
+editor/display_folded = true
 position = Vector2( 64, 96 )
 texture = ExtResource( 17 )
 centered = false
@@ -325,6 +345,7 @@ shape = SubResource( 6 )
 
 [node name="tomb_2" type="Sprite" parent="." index="17"]
 
+editor/display_folded = true
 position = Vector2( 96, 96 )
 texture = ExtResource( 18 )
 centered = false
@@ -347,6 +368,7 @@ shape = SubResource( 6 )
 
 [node name="tomb_3" type="Sprite" parent="." index="18"]
 
+editor/display_folded = true
 position = Vector2( 128, 96 )
 texture = ExtResource( 19 )
 centered = false
@@ -369,6 +391,7 @@ shape = SubResource( 6 )
 
 [node name="tomb_4" type="Sprite" parent="." index="19"]
 
+editor/display_folded = true
 position = Vector2( 32, 128 )
 texture = ExtResource( 20 )
 centered = false
@@ -391,6 +414,7 @@ shape = SubResource( 6 )
 
 [node name="tomb_5" type="Sprite" parent="." index="20"]
 
+editor/display_folded = true
 position = Vector2( 64, 128 )
 texture = ExtResource( 21 )
 centered = false
@@ -413,6 +437,7 @@ shape = SubResource( 6 )
 
 [node name="tomb_6" type="Sprite" parent="." index="21"]
 
+editor/display_folded = true
 position = Vector2( 96, 128 )
 texture = ExtResource( 22 )
 centered = false
@@ -435,6 +460,7 @@ shape = SubResource( 6 )
 
 [node name="tomb_7" type="Sprite" parent="." index="22"]
 
+editor/display_folded = true
 position = Vector2( 128, 128 )
 texture = ExtResource( 23 )
 centered = false
@@ -457,6 +483,7 @@ shape = SubResource( 6 )
 
 [node name="tomb_8" type="Sprite" parent="." index="23"]
 
+editor/display_folded = true
 position = Vector2( 128, 32 )
 texture = ExtResource( 24 )
 centered = false
@@ -479,6 +506,7 @@ shape = SubResource( 6 )
 
 [node name="tomb_9" type="Sprite" parent="." index="24"]
 
+editor/display_folded = true
 position = Vector2( 128, 64 )
 texture = ExtResource( 25 )
 centered = false
@@ -498,5 +526,234 @@ bounce = 0.0
 
 position = Vector2( 16, 22 )
 shape = SubResource( 6 )
+
+[node name="wall_1" type="Sprite" parent="." index="25"]
+
+position = Vector2( 192, 0 )
+texture = ExtResource( 26 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="wall_1" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall_1/StaticBody2D" index="0"]
+
+position = Vector2( 16, 16 )
+shape = SubResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="wall_1" index="1"]
+
+occluder = SubResource( 8 )
+light_mask = 1
+
+[node name="wall_2" type="Sprite" parent="." index="26"]
+
+editor/display_folded = true
+position = Vector2( 160, 0 )
+texture = ExtResource( 27 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="wall_2" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall_2/StaticBody2D" index="0"]
+
+position = Vector2( 16, 16 )
+shape = SubResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="wall_2" index="1"]
+
+occluder = SubResource( 8 )
+light_mask = 1
+
+[node name="wall_3" type="Sprite" parent="." index="27"]
+
+editor/display_folded = true
+position = Vector2( 224, 0 )
+texture = ExtResource( 28 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="wall_3" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall_3/StaticBody2D" index="0"]
+
+position = Vector2( 16, 16 )
+shape = SubResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="wall_3" index="1"]
+
+occluder = SubResource( 8 )
+light_mask = 1
+
+[node name="wall_4" type="Sprite" parent="." index="28"]
+
+editor/display_folded = true
+position = Vector2( 160, 64 )
+texture = ExtResource( 29 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="wall_4" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall_4/StaticBody2D" index="0"]
+
+position = Vector2( 16, 16 )
+shape = SubResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="wall_4" index="1"]
+
+occluder = SubResource( 8 )
+light_mask = 1
+
+[node name="wall_5" type="Sprite" parent="." index="29"]
+
+editor/display_folded = true
+position = Vector2( 224, 64 )
+texture = ExtResource( 30 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="wall_5" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall_5/StaticBody2D" index="0"]
+
+position = Vector2( 16, 16 )
+shape = SubResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="wall_5" index="1"]
+
+occluder = SubResource( 8 )
+light_mask = 1
+
+[node name="wall_6" type="Sprite" parent="." index="30"]
+
+editor/display_folded = true
+position = Vector2( 192, 64 )
+texture = ExtResource( 31 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="wall_6" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall_6/StaticBody2D" index="0"]
+
+position = Vector2( 16, 16 )
+shape = SubResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="wall_6" index="1"]
+
+occluder = SubResource( 8 )
+light_mask = 1
+
+[node name="wall_7" type="Sprite" parent="." index="31"]
+
+position = Vector2( 160, 32 )
+texture = ExtResource( 32 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="wall_7" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall_7/StaticBody2D" index="0"]
+
+position = Vector2( 16, 16 )
+shape = SubResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="wall_7" index="1"]
+
+occluder = SubResource( 8 )
+light_mask = 1
+
+[node name="wall_8" type="Sprite" parent="." index="32"]
+
+position = Vector2( 224, 32 )
+texture = ExtResource( 33 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="wall_8" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall_8/StaticBody2D" index="0"]
+
+position = Vector2( 16, 16 )
+shape = SubResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="wall_8" index="1"]
+
+occluder = SubResource( 8 )
+light_mask = 1
 
 

@@ -17,8 +17,16 @@ var mov = Vector2()
 var light_scale = 0.8
 var light_anim = "add"
 var light_vel = 0.05
+var light_on = true
 
 func _physics_process(delta):
+	if Input.is_action_just_pressed("light"):
+		if $Light2D.get_energy() == 1:
+			$Light2D.set_energy(0.1)
+			light = false
+		else:
+			$Light2D.set_energy(1)
+			light = true
 	if Input.is_action_pressed("up"):
 		mov += dir.up * speed * delta
 		mov.x = lerp(mov.x, 0, weight)
@@ -46,13 +54,14 @@ func _physics_process(delta):
 	mov.y = clamp(mov.y, -max_speed, max_speed)
 	mov = move_and_slide(mov)
 	
-	$Light2D.rotation_degrees += 5 * delta
-	#$Light2D2.rotation_degrees -= 5 * delta
-	if $Light2D.get_texture_scale() >= light_scale:
-		light_anim = "sub"
-	elif $Light2D.get_texture_scale() <= light_scale - 0.05:
-		light_anim = "add"
-	if light_anim == "add":
-		$Light2D.set_texture_scale($Light2D.get_texture_scale() + light_vel * delta)
-	else:
-		$Light2D.set_texture_scale($Light2D.get_texture_scale() - light_vel * delta)
+	if light:
+		$Light2D.rotation_degrees += 5 * delta
+		#$Light2D2.rotation_degrees -= 5 * delta
+		if $Light2D.get_texture_scale() >= light_scale:
+			light_anim = "sub"
+		elif $Light2D.get_texture_scale() <= light_scale - 0.05:
+			light_anim = "add"
+		if light_anim == "add":
+			$Light2D.set_texture_scale($Light2D.get_texture_scale() + light_vel * delta)
+		else:
+			$Light2D.set_texture_scale($Light2D.get_texture_scale() - light_vel * delta)
