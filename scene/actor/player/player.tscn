@@ -106,7 +106,7 @@ enabled = true
 editor_only = false
 texture = ExtResource( 5 )
 offset = Vector2( 0, 0 )
-texture_scale = 0.8
+texture_scale = 0.95
 color = Color( 1, 1, 1, 1 )
 energy = 1.0
 mode = 2
@@ -164,7 +164,7 @@ blend_times = [  ]
 [node name="spark_cycle" type="Timer" parent="." index="7"]
 
 process_mode = 1
-wait_time = 4.0
+wait_time = 8.0
 one_shot = true
 autostart = true
 

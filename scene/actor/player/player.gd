@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var light = false
+var light = true
 var light_pos = {
 
 }
@@ -14,7 +14,7 @@ var dir = {
 	left = Vector2(-1, 0),
 }
 var mov = Vector2()
-var light_scale = 0.8
+var light_scale = 1
 var light_anim = "add"
 var light_vel = 0.05
 #var light_on = true
@@ -22,7 +22,7 @@ var light_vel = 0.05
 func _physics_process(delta):
 	if Input.is_action_just_pressed("light"):
 		if $Light2D.get_energy() == 1:
-			$Light2D.set_energy(0.1)
+			$Light2D.set_energy(0.2)
 			light = false
 		else:
 			$Light2D.set_energy(1)
@@ -55,6 +55,7 @@ func _physics_process(delta):
 	mov = move_and_slide(mov)
 	
 	if light:
+		light_scale -= 0.003 * delta
 		$Light2D.rotation_degrees += 5 * delta
 		#$Light2D2.rotation_degrees -= 5 * delta
 		if $Light2D.get_texture_scale() >= light_scale:
@@ -74,5 +75,5 @@ func spark():
 
 func _on_spark_cycle_timeout():
 	spark()
-	$spark_cycle.set_wait_time(randi()%3+1)
+	$spark_cycle.set_wait_time(randi()%5+5)
 	$spark_cycle.start()

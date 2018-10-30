@@ -8,7 +8,9 @@
 custom_solver_bias = 0.0
 extents = Vector2( 8, 8 )
 
-[node name="key" type="Area2D"]
+[node name="key" type="Area2D" groups=[
+"key",
+]]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -30,5 +32,7 @@ _sections_unfolded = [ "Offset" ]
 position = Vector2( 8, 8 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
+
+[connection signal="body_entered" from="." to="." method="_on_key_body_entered"]
 
 

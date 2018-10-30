@@ -34,6 +34,11 @@
 [ext_resource path="res://scene/tile/grass_4.png" type="Texture" id=32]
 [ext_resource path="res://scene/tile/fence_1.png" type="Texture" id=33]
 
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 5 )
+
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
@@ -54,12 +59,7 @@ radius = 16.0
 custom_solver_bias = 0.0
 extents = Vector2( 12, 8 )
 
-[sub_resource type="RectangleShape2D" id=6]
-
-custom_solver_bias = 0.0
-extents = Vector2( 16, 16 )
-
-[sub_resource type="OccluderPolygon2D" id=8]
+[sub_resource type="OccluderPolygon2D" id=6]
 
 closed = true
 cull_mode = 0
@@ -68,9 +68,9 @@ polygon = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 [sub_resource type="RectangleShape2D" id=7]
 
 custom_solver_bias = 0.0
-extents = Vector2( 16, 5 )
+extents = Vector2( 16, 16 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=8]
 
 custom_solver_bias = 0.0
 extents = Vector2( 16, 5 )
@@ -169,7 +169,7 @@ extents = Vector2( 16, 5 )
 9/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 9 ),
+"shape": SubResource( 8 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 16, 19 )
 } ]
 10/name = "fence_2"
@@ -183,7 +183,7 @@ extents = Vector2( 16, 5 )
 10/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 2 ),
+"shape": SubResource( 1 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 10, 19 )
 } ]
 11/name = "fence_3"
@@ -197,7 +197,7 @@ extents = Vector2( 16, 5 )
 11/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 2 ),
+"shape": SubResource( 1 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 22, 19 )
 } ]
 12/name = "fence_4"
@@ -211,7 +211,7 @@ extents = Vector2( 16, 5 )
 12/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 3 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 16, 16 )
 } ]
 13/name = "fence_5"
@@ -225,12 +225,12 @@ extents = Vector2( 16, 5 )
 13/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 3 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 16, 16 )
 }, {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 4 ),
+"shape": SubResource( 3 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 27, 20 )
 } ]
 14/name = "fence_6"
@@ -244,12 +244,12 @@ extents = Vector2( 16, 5 )
 14/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 4 ),
+"shape": SubResource( 3 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 5, 20 )
 }, {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 3 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 16, 16 )
 } ]
 15/name = "statue_1"
@@ -263,7 +263,7 @@ extents = Vector2( 16, 5 )
 15/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 5 ),
+"shape": SubResource( 4 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 16, 16 )
 } ]
 16/name = "tomb_1"
@@ -277,7 +277,7 @@ extents = Vector2( 16, 5 )
 16/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 6 ),
+"shape": SubResource( 5 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 16, 22 )
 } ]
 17/name = "tomb_2"
@@ -291,7 +291,7 @@ extents = Vector2( 16, 5 )
 17/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 6 ),
+"shape": SubResource( 5 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 16, 22 )
 } ]
 18/name = "tomb_3"
@@ -305,7 +305,7 @@ extents = Vector2( 16, 5 )
 18/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 6 ),
+"shape": SubResource( 5 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 16, 22 )
 } ]
 19/name = "tomb_4"
@@ -319,7 +319,7 @@ extents = Vector2( 16, 5 )
 19/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 6 ),
+"shape": SubResource( 5 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 16, 22 )
 } ]
 20/name = "tomb_5"
@@ -333,7 +333,7 @@ extents = Vector2( 16, 5 )
 20/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 6 ),
+"shape": SubResource( 5 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 16, 22 )
 } ]
 21/name = "tomb_6"
@@ -347,7 +347,7 @@ extents = Vector2( 16, 5 )
 21/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 6 ),
+"shape": SubResource( 5 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 16, 22 )
 } ]
 22/name = "tomb_7"
@@ -361,7 +361,7 @@ extents = Vector2( 16, 5 )
 22/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 6 ),
+"shape": SubResource( 5 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 16, 22 )
 } ]
 23/name = "tomb_8"
@@ -375,7 +375,7 @@ extents = Vector2( 16, 5 )
 23/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 6 ),
+"shape": SubResource( 5 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 16, 22 )
 } ]
 24/name = "tomb_9"
@@ -389,7 +389,7 @@ extents = Vector2( 16, 5 )
 24/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 6 ),
+"shape": SubResource( 5 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 16, 22 )
 } ]
 25/name = "wall_1"
@@ -399,7 +399,7 @@ extents = Vector2( 16, 5 )
 25/region = Rect2( 0, 0, 32, 32 )
 25/is_autotile = false
 25/occluder_offset = Vector2( 0, 0 )
-25/occluder = SubResource( 8 )
+25/occluder = SubResource( 6 )
 25/navigation_offset = Vector2( 0, 0 )
 25/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
@@ -414,7 +414,7 @@ extents = Vector2( 16, 5 )
 26/region = Rect2( 0, 0, 32, 32 )
 26/is_autotile = false
 26/occluder_offset = Vector2( 0, 0 )
-26/occluder = SubResource( 8 )
+26/occluder = SubResource( 6 )
 26/navigation_offset = Vector2( 0, 0 )
 26/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
@@ -429,7 +429,7 @@ extents = Vector2( 16, 5 )
 27/region = Rect2( 0, 0, 32, 32 )
 27/is_autotile = false
 27/occluder_offset = Vector2( 0, 0 )
-27/occluder = SubResource( 8 )
+27/occluder = SubResource( 6 )
 27/navigation_offset = Vector2( 0, 0 )
 27/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
@@ -444,7 +444,7 @@ extents = Vector2( 16, 5 )
 28/region = Rect2( 0, 0, 32, 32 )
 28/is_autotile = false
 28/occluder_offset = Vector2( 0, 0 )
-28/occluder = SubResource( 8 )
+28/occluder = SubResource( 6 )
 28/navigation_offset = Vector2( 0, 0 )
 28/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
@@ -459,7 +459,7 @@ extents = Vector2( 16, 5 )
 29/region = Rect2( 0, 0, 32, 32 )
 29/is_autotile = false
 29/occluder_offset = Vector2( 0, 0 )
-29/occluder = SubResource( 8 )
+29/occluder = SubResource( 6 )
 29/navigation_offset = Vector2( 0, 0 )
 29/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
@@ -474,7 +474,7 @@ extents = Vector2( 16, 5 )
 30/region = Rect2( 0, 0, 32, 32 )
 30/is_autotile = false
 30/occluder_offset = Vector2( 0, 0 )
-30/occluder = SubResource( 8 )
+30/occluder = SubResource( 6 )
 30/navigation_offset = Vector2( 0, 0 )
 30/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
@@ -489,7 +489,7 @@ extents = Vector2( 16, 5 )
 31/region = Rect2( 0, 0, 32, 32 )
 31/is_autotile = false
 31/occluder_offset = Vector2( 0, 0 )
-31/occluder = SubResource( 8 )
+31/occluder = SubResource( 6 )
 31/navigation_offset = Vector2( 0, 0 )
 31/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
@@ -504,7 +504,7 @@ extents = Vector2( 16, 5 )
 32/region = Rect2( 0, 0, 32, 32 )
 32/is_autotile = false
 32/occluder_offset = Vector2( 0, 0 )
-32/occluder = SubResource( 8 )
+32/occluder = SubResource( 6 )
 32/navigation_offset = Vector2( 0, 0 )
 32/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
