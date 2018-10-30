@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/preba.png-3f47d8dfd4c2582b35ebd1ed7bf2627f.stex"
+path="res://.import/spark_03.png-b66ad7166d713a17918c66de4b9cab75.stex"
 
 [deps]
 
-source_file="res://scene/tile/preba.png"
-dest_files=[ "res://.import/preba.png-3f47d8dfd4c2582b35ebd1ed7bf2627f.stex" ]
+source_file="res://scene/actor/player/spark/spark_03.png"
+dest_files=[ "res://.import/spark_03.png-b66ad7166d713a17918c66de4b9cab75.stex" ]
 
 [params]
 

@@ -17,7 +17,7 @@ var mov = Vector2()
 var light_scale = 0.8
 var light_anim = "add"
 var light_vel = 0.05
-var light_on = true
+#var light_on = true
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("light"):
@@ -65,3 +65,14 @@ func _physics_process(delta):
 			$Light2D.set_texture_scale($Light2D.get_texture_scale() + light_vel * delta)
 		else:
 			$Light2D.set_texture_scale($Light2D.get_texture_scale() - light_vel * delta)
+
+func spark():
+	var spark_texture = load("res://scene/actor/player/spark/spark_0" + str(randi()%4+1) + ".png")
+	$effect/spark.set_texture(spark_texture)
+	$effect/spark.rotation_degrees = randi()%360
+	$spark_anim.play("spark")
+
+func _on_spark_cycle_timeout():
+	spark()
+	$spark_cycle.set_wait_time(randi()%3+1)
+	$spark_cycle.start()
