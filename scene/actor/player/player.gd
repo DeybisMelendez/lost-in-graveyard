@@ -76,6 +76,8 @@ func spark():
 	$effect/spark.set_texture(spark_texture)
 	$effect/spark.rotation_degrees = randi()%360
 	$spark_anim.play("spark")
+	$spark.set_pitch_scale(rand_range(0.5 , 2))
+	$spark.play()
 
 func _on_spark_cycle_timeout():
 	spark()

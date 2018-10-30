@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Horror Cinema 4 2014.wav-207c00894703c22c8a12752b8b64ce6a.sample"
+
+[deps]
+
+source_file="res://sound/alert/Horror Cinema 4 2014.wav"
+dest_files=[ "res://.import/Horror Cinema 4 2014.wav-207c00894703c22c8a12752b8b64ce6a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

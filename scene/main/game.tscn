@@ -1,21 +1,25 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://scene/tile/map.tres" type="TileSet" id=1]
-[ext_resource path="res://scene/actor/player/player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scene/item/key/key.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scene/item/gate/gate.tscn" type="PackedScene" id=4]
-[ext_resource path="res://font/Spooky Halloween - OTF.otf" type="DynamicFontData" id=5]
-[ext_resource path="res://scene/main/key_label.gd" type="Script" id=6]
+[ext_resource path="res://scene/main/game.gd" type="Script" id=1]
+[ext_resource path="res://scene/tile/map.tres" type="TileSet" id=2]
+[ext_resource path="res://scene/actor/player/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scene/item/key/key.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scene/item/gate/gate.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scene/actor/ghost_1/ghost_1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://font/Spooky Halloween - OTF.otf" type="DynamicFontData" id=7]
+[ext_resource path="res://scene/main/key_label.gd" type="Script" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 
 size = 64
 use_mipmaps = true
 use_filter = true
-font_data = ExtResource( 5 )
+font_data = ExtResource( 7 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [node name="game" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." index="0"]
 
@@ -25,7 +29,7 @@ color = Color( 0, 0, 0, 1 )
 [node name="ground" type="TileMap" parent="." index="1"]
 
 mode = 0
-tile_set = ExtResource( 1 )
+tile_set = ExtResource( 2 )
 cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -46,7 +50,7 @@ _sections_unfolded = [ "Cell", "Transform" ]
 [node name="bodies" type="TileMap" parent="." index="2"]
 
 mode = 0
-tile_set = ExtResource( 1 )
+tile_set = ExtResource( 2 )
 cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -64,29 +68,41 @@ format = 1
 tile_data = PoolIntArray( 0, 26, 0, 3, 25, 0, 4, 25, 0, 5, 25, 0, 6, 25, 0, 7, 25, 0, 8, 25, 0, 9, 25, 0, 10, 25, 0, 11, 25, 0, 12, 25, 0, 13, 25, 0, 14, 25, 0, 15, 25, 0, 16, 25, 0, 17, 25, 0, 18, 25, 0, 19, 25, 0, 20, 25, 0, 21, 25, 0, 22, 25, 0, 23, 25, 0, 24, 25, 0, 25, 25, 0, 26, 25, 0, 27, 25, 0, 28, 25, 0, 29, 25, 0, 30, 25, 0, 31, 27, 0, 65536, 31, 0, 65567, 32, 0, 131072, 31, 0, 131103, 32, 0, 196608, 31, 0, 196616, 13, 0, 196617, 9, 0, 196618, 9, 0, 196619, 9, 0, 196620, 9, 0, 196621, 9, 0, 196622, 9, 0, 196623, 9, 0, 196624, 9, 0, 196625, 9, 0, 196626, 9, 0, 196627, 9, 0, 196628, 9, 0, 196629, 9, 0, 196630, 9, 0, 196631, 9, 0, 196632, 9, 0, 196633, 9, 0, 196634, 9, 0, 196635, 9, 0, 196636, 9, 0, 196637, 9, 0, 196638, 14, 0, 196639, 32, 0, 262144, 31, 0, 262152, 12, 0, 262156, 19, 0, 262160, 19, 0, 262163, 20, 0, 262174, 12, 0, 262175, 32, 0, 327680, 31, 0, 327688, 12, 0, 327700, 19, 0, 327701, 19, 0, 327703, 20, 0, 327710, 12, 0, 327711, 32, 0, 393216, 31, 0, 393224, 12, 0, 393225, 19, 0, 393230, 20, 0, 393246, 12, 0, 393247, 32, 0, 458752, 31, 0, 458760, 12, 0, 458763, 19, 0, 458766, 19, 0, 458770, 19, 0, 458773, 20, 0, 458774, 19, 0, 458782, 12, 0, 458783, 32, 0, 524288, 31, 0, 524296, 12, 0, 524318, 12, 0, 524319, 32, 0, 589824, 31, 0, 589832, 11, 0, 589833, 9, 0, 589834, 9, 0, 589835, 9, 0, 589836, 9, 0, 589837, 9, 0, 589838, 9, 0, 589839, 9, 0, 589840, 9, 0, 589841, 9, 0, 589842, 9, 0, 589843, 9, 0, 589844, 9, 0, 589845, 9, 0, 589846, 9, 0, 589847, 9, 0, 589848, 9, 0, 589849, 9, 0, 589850, 9, 0, 589851, 9, 0, 589854, 10, 0, 589855, 32, 0, 655360, 31, 0, 655391, 32, 0, 720896, 31, 0, 720927, 32, 0, 786432, 31, 0, 786463, 32, 0, 851968, 31, 0, 851999, 32, 0, 917504, 31, 0, 917535, 32, 0, 983040, 31, 0, 983071, 32, 0, 1048576, 31, 0, 1048607, 32, 0, 1114112, 31, 0, 1114143, 32, 0, 1179648, 28, 0, 1179649, 30, 0, 1179650, 30, 0, 1179651, 30, 0, 1179652, 30, 0, 1179653, 30, 0, 1179654, 30, 0, 1179655, 30, 0, 1179656, 30, 0, 1179657, 30, 0, 1179658, 30, 0, 1179659, 30, 0, 1179660, 30, 0, 1179661, 30, 0, 1179662, 30, 0, 1179663, 30, 0, 1179664, 30, 0, 1179665, 30, 0, 1179666, 30, 0, 1179667, 30, 0, 1179668, 30, 0, 1179669, 30, 0, 1179670, 30, 0, 1179671, 30, 0, 1179672, 30, 0, 1179673, 30, 0, 1179674, 30, 0, 1179675, 30, 0, 1179676, 30, 0, 1179677, 30, 0, 1179678, 30, 0, 1179679, 29, 0 )
 _sections_unfolded = [ "Cell" ]
 
-[node name="player" parent="bodies" index="0" instance=ExtResource( 2 )]
+[node name="player" parent="bodies" index="0" instance=ExtResource( 3 )]
 
 position = Vector2( 540.366, 210.343 )
 
-[node name="key" parent="bodies" index="1" instance=ExtResource( 3 )]
+[node name="key" parent="bodies" index="1" instance=ExtResource( 4 )]
 
 position = Vector2( 96, 48 )
 
-[node name="key2" parent="bodies" index="2" instance=ExtResource( 3 )]
+[node name="key2" parent="bodies" index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 160, 399 )
 
-[node name="key3" parent="bodies" index="3" instance=ExtResource( 3 )]
+[node name="key3" parent="bodies" index="3" instance=ExtResource( 4 )]
 
 position = Vector2( 944, 63 )
 
-[node name="key4" parent="bodies" index="4" instance=ExtResource( 3 )]
+[node name="key4" parent="bodies" index="4" instance=ExtResource( 4 )]
 
 position = Vector2( 944, 463 )
 
-[node name="gate" parent="bodies" index="5" instance=ExtResource( 4 )]
+[node name="gate" parent="bodies" index="5" instance=ExtResource( 5 )]
 
 position = Vector2( 32, -32 )
+
+[node name="ghost_1" parent="bodies" index="6" instance=ExtResource( 6 )]
+
+position = Vector2( 128, 80 )
+
+[node name="ghost_2" parent="bodies" index="7" instance=ExtResource( 6 )]
+
+position = Vector2( 128, 448 )
+
+[node name="ghost_3" parent="bodies" index="8" instance=ExtResource( 6 )]
+
+position = Vector2( 528, 432 )
 
 [node name="menu" type="CanvasLayer" parent="." index="3"]
 
@@ -135,7 +151,7 @@ text = "Keys: 0/5"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script = ExtResource( 6 )
+script = ExtResource( 8 )
 _sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
 
 

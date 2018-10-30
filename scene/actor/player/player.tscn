@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scene/actor/player/player.gd" type="Script" id=1]
 [ext_resource path="res://scene/actor/player/rain.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scene/actor/player/anim/anim.tres" type="SpriteFrames" id=3]
 [ext_resource path="res://scene/actor/player/spark/spark_01.png" type="Texture" id=4]
 [ext_resource path="res://scene/actor/player/light_01.png" type="Texture" id=5]
+[ext_resource path="res://sound/alert/238807__onesoundtorulethemall__thunder6.wav" type="AudioStream" id=6]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -70,6 +71,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="effect" type="CanvasLayer" parent="." index="3"]
 
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -169,6 +171,17 @@ process_mode = 1
 wait_time = 8.0
 one_shot = true
 autostart = true
+
+[node name="spark" type="AudioStreamPlayer2D" parent="." index="8"]
+
+stream = ExtResource( 6 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 [connection signal="timeout" from="spark_cycle" to="." method="_on_spark_cycle_timeout"]
 

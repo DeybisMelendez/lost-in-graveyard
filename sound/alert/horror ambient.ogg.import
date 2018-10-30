@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/horror ambient.ogg-f4578600fd45ca6c3280b05f88e9cda7.oggstr"
+
+[deps]
+
+source_file="res://sound/alert/horror ambient.ogg"
+dest_files=[ "res://.import/horror ambient.ogg-f4578600fd45ca6c3280b05f88e9cda7.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

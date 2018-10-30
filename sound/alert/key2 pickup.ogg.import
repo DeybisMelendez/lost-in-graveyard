@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/key2 pickup.ogg-7430cfd2c6bef8982d9de8dcd1a8c222.oggstr"
+
+[deps]
+
+source_file="res://sound/alert/key2 pickup.ogg"
+dest_files=[ "res://.import/key2 pickup.ogg-7430cfd2c6bef8982d9de8dcd1a8c222.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
