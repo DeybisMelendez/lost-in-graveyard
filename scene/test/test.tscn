@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scene/tile/map.tres" type="TileSet" id=1]
 [ext_resource path="res://scene/actor/player/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scene/actor/girl/girl.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scene/actor/ghost_2/ghost_2.tscn" type="PackedScene" id=4]
 
-[node name="test" type="Node2D"]
+[node name="test" type="Node2D" index="0"]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." index="0"]
 
@@ -54,5 +56,13 @@ _sections_unfolded = [ "Cell" ]
 [node name="player" parent="mapa" index="0" instance=ExtResource( 2 )]
 
 position = Vector2( 540.366, 210.343 )
+
+[node name="girl" parent="." index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 610, 340 )
+
+[node name="ghost_2" parent="." index="4" instance=ExtResource( 4 )]
+
+position = Vector2( 420, 70 )
 
 

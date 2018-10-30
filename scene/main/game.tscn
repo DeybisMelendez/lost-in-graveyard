@@ -70,7 +70,6 @@ _sections_unfolded = [ "Cell" ]
 
 [node name="player" parent="bodies" index="0" instance=ExtResource( 3 )]
 
-visible = false
 position = Vector2( 540.366, 210.343 )
 
 [node name="key" parent="bodies" index="1" instance=ExtResource( 4 )]

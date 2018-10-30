@@ -34,32 +34,32 @@
 [ext_resource path="res://scene/tile/wall_v1.png" type="Texture" id=32]
 [ext_resource path="res://scene/tile/wall_v2.png" type="Texture" id=33]
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 16, 5 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 5 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 5, 16 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
 extents = Vector2( 5, 5 )
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=5]
 
 custom_solver_bias = 0.0
 radius = 16.0
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=6]
 
 custom_solver_bias = 0.0
 extents = Vector2( 12, 8 )
@@ -69,13 +69,13 @@ extents = Vector2( 12, 8 )
 custom_solver_bias = 0.0
 extents = Vector2( 16, 16 )
 
-[sub_resource type="OccluderPolygon2D" id=6]
+[sub_resource type="OccluderPolygon2D" id=8]
 
 closed = true
 cull_mode = 0
 polygon = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 
-[node name="map" type="Node"]
+[node name="map" type="Node" index="0"]
 
 [node name="grass" type="Sprite" parent="." index="0"]
 
@@ -161,7 +161,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fence_1/StaticBody2D" index="0"]
 
 position = Vector2( 16, 19 )
-shape = SubResource( 8 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="fence_2" type="Sprite" parent="." index="10"]
@@ -186,7 +186,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fence_2/StaticBody2D" index="0"]
 
 position = Vector2( 10, 19 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="fence_3" type="Sprite" parent="." index="11"]
@@ -211,7 +211,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fence_3/StaticBody2D" index="0"]
 
 position = Vector2( 22, 19 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="fence_4" type="Sprite" parent="." index="12"]
@@ -235,7 +235,7 @@ bounce = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fence_4/StaticBody2D" index="0"]
 
 position = Vector2( 16, 16 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="fence_5" type="Sprite" parent="." index="13"]
@@ -259,13 +259,13 @@ bounce = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fence_5/StaticBody2D" index="0"]
 
 position = Vector2( 16, 16 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="fence_5/StaticBody2D" index="1"]
 
 position = Vector2( 27, 20 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="fence_6" type="Sprite" parent="." index="14"]
 
@@ -288,13 +288,13 @@ bounce = 0.0
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="fence_6/StaticBody2D" index="0"]
 
 position = Vector2( 5, 20 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fence_6/StaticBody2D" index="1"]
 
 position = Vector2( 16, 16 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="statue_1" type="Sprite" parent="." index="15"]
@@ -318,7 +318,7 @@ bounce = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="statue_1/StaticBody2D" index="0"]
 
 position = Vector2( 16, 16 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="tomb_1" type="Sprite" parent="." index="16"]
 
@@ -341,7 +341,7 @@ bounce = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tomb_1/StaticBody2D" index="0"]
 
 position = Vector2( 16, 22 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="tomb_2" type="Sprite" parent="." index="17"]
 
@@ -364,7 +364,7 @@ bounce = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tomb_2/StaticBody2D" index="0"]
 
 position = Vector2( 16, 22 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="tomb_3" type="Sprite" parent="." index="18"]
 
@@ -387,7 +387,7 @@ bounce = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tomb_3/StaticBody2D" index="0"]
 
 position = Vector2( 16, 22 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="tomb_4" type="Sprite" parent="." index="19"]
 
@@ -410,7 +410,7 @@ bounce = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tomb_4/StaticBody2D" index="0"]
 
 position = Vector2( 16, 22 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="tomb_5" type="Sprite" parent="." index="20"]
 
@@ -433,7 +433,7 @@ bounce = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tomb_5/StaticBody2D" index="0"]
 
 position = Vector2( 16, 22 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="tomb_6" type="Sprite" parent="." index="21"]
 
@@ -456,7 +456,7 @@ bounce = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tomb_6/StaticBody2D" index="0"]
 
 position = Vector2( 16, 22 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="tomb_7" type="Sprite" parent="." index="22"]
 
@@ -479,7 +479,7 @@ bounce = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tomb_7/StaticBody2D" index="0"]
 
 position = Vector2( 16, 22 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="tomb_8" type="Sprite" parent="." index="23"]
 
@@ -502,7 +502,7 @@ bounce = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tomb_8/StaticBody2D" index="0"]
 
 position = Vector2( 16, 22 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="tomb_9" type="Sprite" parent="." index="24"]
 
@@ -525,7 +525,7 @@ bounce = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tomb_9/StaticBody2D" index="0"]
 
 position = Vector2( 16, 22 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="wall_1" type="Sprite" parent="." index="25"]
 
@@ -552,7 +552,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="wall_1" index="1"]
 
-occluder = SubResource( 6 )
+occluder = SubResource( 8 )
 light_mask = 1
 
 [node name="wall_2" type="Sprite" parent="." index="26"]
@@ -581,7 +581,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="wall_2" index="1"]
 
-occluder = SubResource( 6 )
+occluder = SubResource( 8 )
 light_mask = 1
 
 [node name="wall_3" type="Sprite" parent="." index="27"]
@@ -610,7 +610,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="wall_3" index="1"]
 
-occluder = SubResource( 6 )
+occluder = SubResource( 8 )
 light_mask = 1
 
 [node name="wall_4" type="Sprite" parent="." index="28"]
@@ -639,7 +639,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="wall_4" index="1"]
 
-occluder = SubResource( 6 )
+occluder = SubResource( 8 )
 light_mask = 1
 
 [node name="wall_5" type="Sprite" parent="." index="29"]
@@ -668,7 +668,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="wall_5" index="1"]
 
-occluder = SubResource( 6 )
+occluder = SubResource( 8 )
 light_mask = 1
 
 [node name="wall_6" type="Sprite" parent="." index="30"]
@@ -697,7 +697,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="wall_6" index="1"]
 
-occluder = SubResource( 6 )
+occluder = SubResource( 8 )
 light_mask = 1
 
 [node name="wall_7" type="Sprite" parent="." index="31"]
@@ -725,7 +725,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="LightOccluder2D3" type="LightOccluder2D" parent="wall_7" index="1"]
 
-occluder = SubResource( 6 )
+occluder = SubResource( 8 )
 light_mask = 1
 
 [node name="wall_8" type="Sprite" parent="." index="32"]
@@ -753,7 +753,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="LightOccluder2D3" type="LightOccluder2D" parent="wall_8" index="1"]
 
-occluder = SubResource( 6 )
+occluder = SubResource( 8 )
 light_mask = 1
 
 
