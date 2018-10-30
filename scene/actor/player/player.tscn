@@ -43,7 +43,9 @@ tracks/1/keys = {
 "values": [ 2.0, 0.01 ]
 }
 
-[node name="player" type="KinematicBody2D"]
+[node name="player" type="KinematicBody2D" groups=[
+"jugador",
+]]
 
 input_pickable = false
 collision_layer = 1
@@ -130,7 +132,7 @@ _sections_unfolded = [ "Range", "Shadow", "Transform", "Visibility" ]
 anchor_mode = 1
 rotating = false
 current = true
-zoom = Vector2( 1, 1 )
+zoom = Vector2( 0.7, 0.7 )
 limit_left = -10000000
 limit_top = -10000000
 limit_right = 10000000

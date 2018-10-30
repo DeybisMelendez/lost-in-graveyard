@@ -24,7 +24,7 @@ func _physics_process(delta):
 		if $Light2D.get_energy() == 1:
 			$Light2D.set_energy(0.2)
 			light = false
-		else:
+		elif $Light2D.get_texture_scale() >= 0.3:
 			$Light2D.set_energy(1)
 			light = true
 	if Input.is_action_pressed("up"):
@@ -55,17 +55,21 @@ func _physics_process(delta):
 	mov = move_and_slide(mov)
 	
 	if light:
-		light_scale -= 0.003 * delta
-		$Light2D.rotation_degrees += 5 * delta
-		#$Light2D2.rotation_degrees -= 5 * delta
-		if $Light2D.get_texture_scale() >= light_scale:
-			light_anim = "sub"
-		elif $Light2D.get_texture_scale() <= light_scale - 0.05:
-			light_anim = "add"
-		if light_anim == "add":
-			$Light2D.set_texture_scale($Light2D.get_texture_scale() + light_vel * delta)
+		if $Light2D.get_texture_scale() >= 0.3:
+			light_scale -= 0.003 * delta
+			$Light2D.rotation_degrees += 5 * delta
+			#$Light2D2.rotation_degrees -= 5 * delta
+			if $Light2D.get_texture_scale() >= light_scale:
+				light_anim = "sub"
+			elif $Light2D.get_texture_scale() <= light_scale - 0.05:
+				light_anim = "add"
+			if light_anim == "add":
+				$Light2D.set_texture_scale($Light2D.get_texture_scale() + light_vel * delta)
+			else:
+				$Light2D.set_texture_scale($Light2D.get_texture_scale() - light_vel * delta)
 		else:
-			$Light2D.set_texture_scale($Light2D.get_texture_scale() - light_vel * delta)
+			light = false
+			$Light2D.set_energy(0.2)
 
 func spark():
 	var spark_texture = load("res://scene/actor/player/spark/spark_0" + str(randi()%4+1) + ".png")
