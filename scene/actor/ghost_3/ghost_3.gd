@@ -13,12 +13,11 @@ func _physics_process(delta):
 		dir = (player_pos - global_position).normalized()
 		vel = (600 - global.time)/10
 		move_and_slide(dir * vel)
-		print (dir * vel)
 	if !global.light_on:
 		change_position()
 
 func change_position():
-	global_position = player_pos + Vector2(300 ,0).rotated(rand_range(PI, -PI)) 
+	global_position = player_pos + Vector2(300 ,0).rotated(rand_range(PI, 0)) 
 
 func _on_follow_body_entered(body):
 	if body.is_in_group("jugador"):

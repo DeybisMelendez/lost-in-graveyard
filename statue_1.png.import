@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/high_wall_2.png-c68d37e9cfefc1c65fe8013d119ba9b7.stex"
+path="res://.import/statue_1.png-4206ef53ec90a51d321cbb5bcef6d152.stex"
 
 [deps]
 
-source_file="res://scene/tile/high_wall_2.png"
-dest_files=[ "res://.import/high_wall_2.png-c68d37e9cfefc1c65fe8013d119ba9b7.stex" ]
+source_file="res://statue_1.png"
+dest_files=[ "res://.import/statue_1.png-4206ef53ec90a51d321cbb5bcef6d152.stex" ]
 
 [params]
 
