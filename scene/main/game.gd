@@ -8,7 +8,7 @@ export (PackedScene) var ghost_1
 export (PackedScene) var ghost_2
 const keys = 5
 const lights = 3
-const ghosts_1 = 2
+const ghosts_1 = 5
 const ghosts_2 = 2
 const girls = 2
 func _ready():

@@ -46,7 +46,7 @@ disabled = true
 self_modulate = Color( 1, 1, 1, 0.0784314 )
 frames = SubResource( 2 )
 animation = "default"
-frame = 2
+frame = 3
 playing = true
 _sections_unfolded = [ "Transform", "Visibility" ]
 
