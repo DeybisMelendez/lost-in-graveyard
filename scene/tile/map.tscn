@@ -75,7 +75,7 @@ closed = true
 cull_mode = 0
 polygon = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 
-[node name="map" type="Node" index="0"]
+[node name="map" type="Node"]
 
 [node name="grass" type="Sprite" parent="." index="0"]
 
@@ -529,6 +529,7 @@ shape = SubResource( 6 )
 
 [node name="wall_1" type="Sprite" parent="." index="25"]
 
+editor/display_folded = true
 position = Vector2( 192, 0 )
 texture = ExtResource( 26 )
 centered = false
@@ -702,6 +703,7 @@ light_mask = 1
 
 [node name="wall_7" type="Sprite" parent="." index="31"]
 
+editor/display_folded = true
 position = Vector2( 160, 32 )
 texture = ExtResource( 32 )
 centered = false
@@ -730,6 +732,7 @@ light_mask = 1
 
 [node name="wall_8" type="Sprite" parent="." index="32"]
 
+editor/display_folded = true
 position = Vector2( 224, 32 )
 texture = ExtResource( 33 )
 centered = false

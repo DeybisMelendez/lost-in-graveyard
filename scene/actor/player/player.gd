@@ -23,10 +23,14 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("light"):
 		if $Light2D.get_energy() == 1:
 			$Light2D.set_energy(0.2)
+			$turn_light.play()
+			global.light_on = false
 			light = false
 		elif $Light2D.get_texture_scale() >= 0.3:
 			$Light2D.set_energy(1)
+			$turn_light.play()
 			light = true
+			global.light_on = true
 	if Input.is_action_pressed("up"):
 		mov += dir.up * speed * delta
 		mov.x = lerp(mov.x, 0, weight)
@@ -70,16 +74,17 @@ func _physics_process(delta):
 		else:
 			light = false
 			$Light2D.set_energy(0.2)
+			global.terminar = true
 
 func spark():
 	var spark_texture = load("res://scene/actor/player/spark/spark_0" + str(randi()%4+1) + ".png")
 	$effect/spark.set_texture(spark_texture)
 	$effect/spark.rotation_degrees = randi()%360
 	$spark_anim.play("spark")
-	$spark.set_pitch_scale(rand_range(0.5 , 2))
+	$spark.set_pitch_scale(rand_range(0.5 , 1.5))
 	$spark.play()
 
 func _on_spark_cycle_timeout():
 	spark()
-	$spark_cycle.set_wait_time(randi()%5+5)
+	$spark_cycle.set_wait_time(randi()%5+10)
 	$spark_cycle.start()

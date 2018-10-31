@@ -1,0 +1,98 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scene/actor/ghost_3/ghost_3.gd" type="Script" id=1]
+[ext_resource path="res://scene/actor/ghost_3/ghost3_1.png" type="Texture" id=2]
+[ext_resource path="res://scene/actor/ghost_3/ghost3_2.png" type="Texture" id=3]
+[ext_resource path="res://scene/actor/ghost_3/ghost3_3.png" type="Texture" id=4]
+[ext_resource path="res://scene/actor/ghost_3/ghost3_4.png" type="Texture" id=5]
+[ext_resource path="res://sound/alert/Horror Cinema 4 2014.wav" type="AudioStream" id=6]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 15.0
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=3]
+
+custom_solver_bias = 0.0
+radius = 150.0
+
+[node name="ghost_3" type="KinematicBody2D"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+
+visible = false
+shape = SubResource( 1 )
+disabled = true
+
+[node name="anim" type="AnimatedSprite" parent="." index="1"]
+
+self_modulate = Color( 1, 1, 1, 0.0784314 )
+frames = SubResource( 2 )
+animation = "default"
+frame = 2
+playing = true
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="sensor" type="Area2D" parent="." index="2"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="sensor" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="follow" type="Area2D" parent="." index="3"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="follow" index="0"]
+
+shape = SubResource( 3 )
+
+[node name="appear" type="AudioStreamPlayer2D" parent="." index="4"]
+
+stream = ExtResource( 6 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[connection signal="body_entered" from="sensor" to="." method="_on_sensor_body_entered"]
+
+[connection signal="body_entered" from="follow" to="." method="_on_follow_body_entered"]
+
+[connection signal="body_exited" from="follow" to="." method="_on_follow_body_exited"]
+
+

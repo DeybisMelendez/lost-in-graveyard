@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/329843__ebonyandme__me-screaming.wav-62c304cb7a555b832c3c8ca31164e6d8.sample"
+
+[deps]
+
+source_file="res://sound/alert/329843__ebonyandme__me-screaming.wav"
+dest_files=[ "res://.import/329843__ebonyandme__me-screaming.wav-62c304cb7a555b832c3c8ca31164e6d8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

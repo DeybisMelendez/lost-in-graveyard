@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scene/actor/girl/girl.gd" type="Script" id=1]
 [ext_resource path="res://scene/actor/girl/girl_1.png" type="Texture" id=2]
@@ -27,6 +27,11 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="CircleShape2D" id=3]
+
+custom_solver_bias = 0.0
+radius = 15.0
+
 [node name="girl" type="Area2D"]
 
 input_pickable = true
@@ -46,7 +51,7 @@ shape = SubResource( 1 )
 [node name="anim" type="AnimatedSprite" parent="." index="1"]
 
 frames = SubResource( 2 )
-animation = "nothing"
+animation = "scream"
 
 [node name="scream" type="AudioStreamPlayer2D" parent="." index="2"]
 
@@ -59,6 +64,22 @@ attenuation = 1.0
 bus = "Master"
 area_mask = 1
 
+[node name="body" type="Area2D" parent="." index="3"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="body" index="0"]
+
+shape = SubResource( 3 )
+
 [connection signal="body_entered" from="." to="." method="_on_girl_body_entered"]
+
+[connection signal="body_entered" from="body" to="." method="_on_body_body_entered"]
 
 

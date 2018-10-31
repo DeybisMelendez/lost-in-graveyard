@@ -12,3 +12,7 @@ func _on_sensor_body_entered(body):
 		$scream.play()
 		yield($anim,"animation_finished")
 		queue_free()
+
+func _on_body_body_entered(body):
+	if body.is_in_group("jugador"):
+		global.terminar = true

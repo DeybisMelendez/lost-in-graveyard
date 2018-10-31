@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/off switch.ogg-e8a7e0f8e91d68e2096364631c88fdc2.oggstr"
+
+[deps]
+
+source_file="res://sound/alert/off switch.ogg"
+dest_files=[ "res://.import/off switch.ogg-e8a7e0f8e91d68e2096364631c88fdc2.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
