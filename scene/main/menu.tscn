@@ -1,10 +1,18 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scene/main/menu.gd" type="Script" id=1]
 [ext_resource path="res://scene/main/ghost_background.png" type="Texture" id=2]
 [ext_resource path="res://font/Spooky Halloween - OTF.otf" type="DynamicFontData" id=3]
 [ext_resource path="res://scene/main/start_button1.png" type="Texture" id=4]
 [ext_resource path="res://sound/alert/Horror Cinema 5 2014.wav" type="AudioStream" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 28
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 3 )
+_sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=2]
 
@@ -14,7 +22,7 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=3]
 
 size = 60
 use_mipmaps = false
@@ -22,9 +30,8 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 
-resource_name = "anim"
 length = 4.0
 loop = false
 step = 0.1
@@ -41,9 +48,8 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 0, 0, 0, 1 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 
-resource_name = "anim2"
 length = 3.0
 loop = true
 step = 0.1
@@ -72,7 +78,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 0, 0, 1 ), Color( 0.574219, 0.00672913, 0.00672913, 1 ) ]
 }
 
-[node name="menu" type="Node2D"]
+[node name="menu" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -82,7 +88,30 @@ position = Vector2( 512, 300 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
 
-[node name="CenterContainer" type="CenterContainer" parent="." index="1"]
+[node name="Label" type="Label" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 16.0
+margin_top = 544.0
+margin_right = 342.0
+margin_bottom = 577.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "Made by Damv and JuanZXL456"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="CenterContainer" type="CenterContainer" parent="." index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -183,7 +212,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "start"
 align = 1
@@ -193,7 +222,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="ColorRect" type="ColorRect" parent="." index="2"]
+[node name="ColorRect" type="ColorRect" parent="." index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -210,7 +239,7 @@ size_flags_vertical = 1
 color = Color( 1, 1, 1, 0 )
 _sections_unfolded = [ "Mouse", "Size Flags" ]
 
-[node name="sound" type="AudioStreamPlayer2D" parent="." index="3"]
+[node name="sound" type="AudioStreamPlayer2D" parent="." index="4"]
 
 stream = ExtResource( 5 )
 volume_db = 10.0
@@ -221,15 +250,15 @@ attenuation = 1.0
 bus = "Master"
 area_mask = 1
 
-[node name="anim" type="AnimationPlayer" parent="." index="4"]
+[node name="anim" type="AnimationPlayer" parent="." index="5"]
 
 root_node = NodePath("..")
 autoplay = "anim2"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/anim = SubResource( 3 )
-anims/anim2 = SubResource( 4 )
+anims/anim = SubResource( 4 )
+anims/anim2 = SubResource( 5 )
 blend_times = [  ]
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/TextureButton" to="." method="_on_TextureButton_pressed"]

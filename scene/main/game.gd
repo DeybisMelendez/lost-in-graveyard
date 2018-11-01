@@ -7,10 +7,10 @@ export (PackedScene) var girl
 export (PackedScene) var ghost_1
 export (PackedScene) var ghost_2
 const keys = 5
-const lights = 3
+const lights = 5
 const ghosts_1 = 5
-const ghosts_2 = 2
-const girls = 2
+const ghosts_2 = 3
+const girls = 4
 func _ready():
 	global.get_node("rain").play()
 	global.time = 600
